@@ -12,12 +12,30 @@ public class cubegreen1 : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Random.seed = (int)System.DateTime.Now.Ticks;
+		// добавить обработку тупика, иначе зависнет
 		do{
 			a = Random.Range (1,5);
-			if ((a==1)&&(aaa.arrWorld[aaa.intX,aaa.intY-1]==0)) flag2 = true;
-			else if ((a==3)&&(aaa.arrWorld[aaa.intX,aaa.intY+1]==0)) flag2 = true;
-			else if ((a==2)&&(aaa.arrWorld[aaa.intX+1,aaa.intY]==0)) flag2 = true;
-			else if ((a==4)&&(aaa.arrWorld[aaa.intX-1,aaa.intY]==0)) flag2 = true;
+
+			if (a==1){
+				if(aaa.intY>0){
+					if(aaa.arrWorld[aaa.intX,aaa.intY-1]==0)flag2 = true;
+				}
+			}
+			else if (a==3){
+				if(aaa.intY<8){
+					if(aaa.arrWorld[aaa.intX,aaa.intY+1]==0)flag2 = true;
+				}
+			}
+			else if (a==2){
+				if(aaa.intX<19){
+					if(aaa.arrWorld[aaa.intX+1,aaa.intY]==0) flag2 = true;
+				}
+			}
+			else if (a==4){
+				if(aaa.intX>0){
+					if(aaa.arrWorld[aaa.intX-1,aaa.intY]==0) flag2 = true;
+				}
+			}
 		}while(!flag2);
 		Debug.Log ("random: " + a);
 	}
@@ -67,6 +85,7 @@ public class cubegreen1 : MonoBehaviour {
 				flag = false;
 				cubeclicked = false;
 			}
+			Debug.Log ("x=" + aaa.intX + ", y=" + aaa.intY);
 			aaa.arrWorld[aaa.intX,aaa.intY]=1;
 		}
 	}

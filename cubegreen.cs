@@ -24,12 +24,12 @@ public class cubegreen1 : MonoBehaviour {
 				}
 			}
 			else if (a==3){
-				if(aaa.intY<8){
+				if(aaa.intY<aaa.maxY){
 					if(aaa.arrWorld[aaa.intX,aaa.intY+1]==0)flag2 = true;
 				}
 			}
 			else if (a==2){
-				if(aaa.intX<19){
+				if(aaa.intX<aaa.maxX){
 					if(aaa.arrWorld[aaa.intX+1,aaa.intY]==0)flag2 = true;
 				}
 			}

@@ -26,7 +26,7 @@ public class cubered : MonoBehaviour {
 			flag = false;
 			cubeclicked = false;
 			aaa.intX=10;
-			aaa.intY=9;
+			aaa.intY=3;
 			aaa.arrWorld[aaa.intX,aaa.intY]=1;
 		}
 	}

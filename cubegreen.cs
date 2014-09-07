@@ -40,7 +40,7 @@ public class cubegreen1 : MonoBehaviour {
 			}
 			i++;
 			// обработка тупика, иначе зависнет
-			if(i=100) Debug.Log("cubegreen: random failed");
+			if(i==100)Debug.Log("cubegreen: random failed");
 		}while((!flag2)&&(i<100));
 		//Debug.Log ("random: " + a);
 	}

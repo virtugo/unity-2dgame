@@ -9,7 +9,7 @@ public class cubered : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		aaa.arrWorld[aaa.intX,aaa.intY]=1;
 	}
 	
 	// Update is called once per frame
@@ -19,11 +19,15 @@ public class cubered : MonoBehaviour {
 			// сгенерировать ребенка
 			Transform t = Instantiate(trCubegreen) as Transform;
 			t.parent = transform;
+			t.localScale = new Vector3(1,1,1);
 			t.localPosition = Vector3.zero;
-			t.localPosition = new Vector3(0,1,0);
+			t.localPosition = new Vector3(0,1.1F,0);
 			t.gameObject.name = "CubeGreenX";
 			flag = false;
 			cubeclicked = false;
+			aaa.intX=10;
+			aaa.intY=9;
+			aaa.arrWorld[aaa.intX,aaa.intY]=1;
 		}
 	}
 

@@ -2,10 +2,12 @@ using UnityEngine;
 using System.Collections;
 
 public class cubered : MonoBehaviour {
-	
+
+	public GameObject trCubered;
 	public Transform trCubegreen;
 	bool cubeclicked = false;
 	bool flag = true;
+	int i,j = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -25,7 +27,6 @@ public class cubered : MonoBehaviour {
 			t.gameObject.name = "CubeGreenX";
 			flag = false;
 			cubeclicked = false;
-			aaa.intX=10;
 			aaa.intY=3;
 			aaa.arrWorld[aaa.intX,aaa.intY]=1;
 		}
@@ -36,14 +37,35 @@ public class cubered : MonoBehaviour {
 			cubeclicked = true;
 			Debug.Log ("cubered: clicked");
 		}
-		else Debug.Log("cubered: already clicked");
+		else {
+			foreach (Transform childTransform in transform) Destroy(childTransform.gameObject);
+			flag=true;
+			// обнулить массив
+			for(i=0;i<=aaa.maxX;i++){
+				for(j=0;j<=aaa.maxY;j++){
+					aaa.arrWorld[i,j] = 0;
+				}
+			}
+			for(i=0;i<=aaa.maxX;i++){
+				for(j=0;j<=aaa.maxY;j++){
+					aaa.arrWorld[i,j] = 0;
+				}
+			}
+			// центральный квадрат
+			aaa.intX = aaa.redcoordX;
+			aaa.intY = aaa.redcoordY;
+			aaa.arrWorld [aaa.redcoordX, aaa.redcoordY] = 1;
+			//Debug.Log("cubered: already clicked");
+		}
 	}
 
+	/**
 	void OnMouseEnter(){  
 		renderer.material.color = Color.grey;  
 	}
 
 	void OnMouseExit(){  
 		renderer.material.color = Color.red;  
-	}  
+	}
+	**/
 }

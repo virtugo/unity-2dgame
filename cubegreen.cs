@@ -86,11 +86,13 @@ public class cubegreen1 : MonoBehaviour {
 		else Debug.Log("cubegreen: already clicked");
 	}
 
+	/**
 	void OnMouseEnter(){  
 		renderer.material.color = Color.grey;  
 	}
 	
 	void OnMouseExit(){  
 		renderer.material.color = Color.green;  
-	} 
+	}
+	**/
 }
